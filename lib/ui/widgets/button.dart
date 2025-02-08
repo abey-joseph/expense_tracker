@@ -1,3 +1,4 @@
+import 'package:expense_tracker/data/colors/Colors.dart';
 import 'package:flutter/material.dart';
 
 Widget button({
@@ -6,7 +7,7 @@ Widget button({
 }) {
   return ElevatedButton(
     style: ButtonStyle(
-      backgroundColor: WidgetStatePropertyAll(Color.fromRGBO(208, 217, 223, 1)),
+      backgroundColor: WidgetStatePropertyAll(UiColors.blueShade),
       shape: WidgetStatePropertyAll(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
@@ -17,9 +18,7 @@ Widget button({
     child: Text(
       buttonText,
       style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-          color: Color.fromRGBO(32, 133, 235, 1)),
+          fontWeight: FontWeight.bold, fontSize: 18, color: UiColors.whiteBg),
     ),
   );
 }

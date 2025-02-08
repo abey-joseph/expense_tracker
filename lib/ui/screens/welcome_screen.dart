@@ -1,7 +1,7 @@
-import 'dart:developer';
-
-import 'package:expense_tracker/ui/screens/loign_screen.dart';
-import 'package:expense_tracker/ui/screens/signin_screen.dart';
+import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/ui/pages/loign_page.dart';
+import 'package:expense_tracker/ui/pages/signin_page.dart';
+import 'package:expense_tracker/ui/widgets/page_indicator_for_welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -49,79 +49,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         Padding(
           padding: const EdgeInsets.only(left: 30),
           child: SizedBox(
-            height: 30,
-            child: Row(
-              spacing: 10,
-              children: [
-                AnimatedDefaultTextStyle(
-                  duration: Duration(milliseconds: 100),
-                  style: (isAtLoginPage)
-                      ? textStyle(20, Colors.deepPurpleAccent)
-                      : textStyle(12, Colors.grey),
-                  child: GestureDetector(
-                    onTap: () {
-                      if (pageController.page != 0) {
-                        pageController.animateToPage(0,
-                            duration: Durations.medium1, curve: Curves.ease);
-                      }
-                    },
-                    child: Text(
-                      "Log In",
-                    ),
-                  ),
-                ),
-                AnimatedDefaultTextStyle(
-                  duration: Duration(milliseconds: 100),
-                  style: (!isAtLoginPage)
-                      ? textStyle(20, Colors.deepPurpleAccent)
-                      : textStyle(12, Colors.grey),
-                  child: GestureDetector(
-                    onTap: () {
-                      if (pageController.page != 1) {
-                        pageController.animateToPage(1,
-                            duration: Durations.medium1, curve: Curves.ease);
-                      }
-                    },
-                    child: Text(
-                      "Sign In",
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
+              height: 30,
+              child: TextPageIndicator(
+                pageController: pageController,
+                isAtFirstPage: isAtLoginPage,
+                isTextAnimate: true,
+                defaultTextSize: 12,
+              )),
         ),
         SizedBox(height: 5),
-        Row(
-          children: [
-            SizedBox(
-              width: 30,
-            ),
-            SmoothPageIndicator(
-              onDotClicked: (index) {
-                if (index == 1) {
-                  pageController.animateToPage(1,
-                      duration: Durations.medium1, curve: Curves.ease);
-                }
-                if (index == 0) {
-                  pageController.animateToPage(0,
-                      duration: Durations.medium1, curve: Curves.ease);
-                }
-              },
-              controller: pageController,
-              count: 2,
-              effect: ExpandingDotsEffect(
-                  dotHeight: 10, dotWidth: 21, expansionFactor: 4),
-            ),
-            Flexible(child: SizedBox())
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 30.0),
+          child: PageIndicator(pageController: pageController, barHeight: 10),
         ),
         SizedBox(height: 30),
         SizedBox(
-          height: 350,
+          height: 300,
           child: SingleChildScrollView(
             child: SizedBox(
-              height: 350,
+              height: 300,
               child: PageView(
                 controller: pageController,
                 children: [
@@ -131,7 +77,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
           ),
-        )
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Or login with  "),
+            Text(
+              "Google",
+              style: TextStyle(color: UiColors.blueShade),
+            )
+          ],
+        ),
       ],
     ));
   }
