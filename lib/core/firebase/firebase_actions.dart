@@ -24,37 +24,39 @@ class FirebaseActions {
     }
   }
 
-  Future<bool> addUserWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<String> addUserWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
       await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return true;
+      return 'true';
     } on FirebaseAuthException catch (e) {
       log("add user failed, reason - ${handleAuthException(e)}");
-      return false;
+      return handleAuthException(e);
     } catch (e) {
       log("add user failed, not a Firebase Auth Exception - reason - ${e.toString()}");
-      return false;
+      return "Sign in Failed";
     }
   }
 
-  Future<bool> logInUserWithEmailAndPassword(
+  Future<String> logInUserWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
       await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return true;
+      return "true";
     } on FirebaseAuthException catch (e) {
       log("login user failed, reason - ${handleAuthException(e)}");
-      return false;
+      return handleAuthException(e);
     } catch (e) {
       log("login user failed, not a Firebase Auth Exception - reason - ${e.toString()}");
-      return false;
+      return "Sign in Failed";
     }
   }
 

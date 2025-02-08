@@ -11,12 +11,12 @@ Widget textField({
       right: 20,
     ),
     child: TextField(
+      controller: controller,
       obscureText: isPassWord,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white
-            .withValues(alpha: 0.1), // Transparent white when focused
-        border: InputBorder.none, // No border
+        fillColor: Colors.white.withValues(alpha: 0.1),
+        border: InputBorder.none,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12), // Rounded rectangle shape
           borderSide: BorderSide(color: Colors.grey),
