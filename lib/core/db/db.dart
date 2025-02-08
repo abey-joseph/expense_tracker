@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:expense_tracker/core/models/expense_model.dart';
 import 'package:path/path.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
@@ -24,6 +23,7 @@ class Db {
           await db.execute('''
             CREATE TABLE expenses(
               id INTEGER PRIMARY KEY AUTOINCREMENT,
+              userID TEXT,
               isExpense INTEGER,
               title TEXT,
               amount REAL,

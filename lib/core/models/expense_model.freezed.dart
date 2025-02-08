@@ -20,11 +20,15 @@ ExpenseModel _$ExpenseModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ExpenseModel {
-  int get id => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  int? get id => throw _privateConstructorUsedError; // Exclude if null
+  String get userID => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
   bool get isExpense => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   double get amount => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
   DateTime get date => throw _privateConstructorUsedError;
 
   /// Serializes this ExpenseModel to a JSON map.
@@ -44,11 +48,13 @@ abstract class $ExpenseModelCopyWith<$Res> {
       _$ExpenseModelCopyWithImpl<$Res, ExpenseModel>;
   @useResult
   $Res call(
-      {int id,
-      bool isExpense,
+      {@JsonKey(includeIfNull: false) int? id,
+      String userID,
+      @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt) bool isExpense,
       String title,
       double amount,
       String category,
+      @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
       DateTime date});
 }
 
@@ -67,7 +73,8 @@ class _$ExpenseModelCopyWithImpl<$Res, $Val extends ExpenseModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
+    Object? userID = null,
     Object? isExpense = null,
     Object? title = null,
     Object? amount = null,
@@ -75,10 +82,14 @@ class _$ExpenseModelCopyWithImpl<$Res, $Val extends ExpenseModel>
     Object? date = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      userID: null == userID
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
+              as String,
       isExpense: null == isExpense
           ? _value.isExpense
           : isExpense // ignore: cast_nullable_to_non_nullable
@@ -112,11 +123,13 @@ abstract class _$$ExpenseModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      bool isExpense,
+      {@JsonKey(includeIfNull: false) int? id,
+      String userID,
+      @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt) bool isExpense,
       String title,
       double amount,
       String category,
+      @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
       DateTime date});
 }
 
@@ -133,7 +146,8 @@ class __$$ExpenseModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
+    Object? userID = null,
     Object? isExpense = null,
     Object? title = null,
     Object? amount = null,
@@ -141,10 +155,14 @@ class __$$ExpenseModelImplCopyWithImpl<$Res>
     Object? date = null,
   }) {
     return _then(_$ExpenseModelImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
+      userID: null == userID
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
+              as String,
       isExpense: null == isExpense
           ? _value.isExpense
           : isExpense // ignore: cast_nullable_to_non_nullable
@@ -173,19 +191,27 @@ class __$$ExpenseModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ExpenseModelImpl implements _ExpenseModel {
   const _$ExpenseModelImpl(
-      {required this.id,
+      {@JsonKey(includeIfNull: false) this.id,
+      required this.userID,
+      @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
       required this.isExpense,
       required this.title,
       required this.amount,
       required this.category,
+      @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
       required this.date});
 
   factory _$ExpenseModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExpenseModelImplFromJson(json);
 
   @override
-  final int id;
+  @JsonKey(includeIfNull: false)
+  final int? id;
+// Exclude if null
   @override
+  final String userID;
+  @override
+  @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
   final bool isExpense;
   @override
   final String title;
@@ -194,11 +220,12 @@ class _$ExpenseModelImpl implements _ExpenseModel {
   @override
   final String category;
   @override
+  @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
   final DateTime date;
 
   @override
   String toString() {
-    return 'ExpenseModel(id: $id, isExpense: $isExpense, title: $title, amount: $amount, category: $category, date: $date)';
+    return 'ExpenseModel(id: $id, userID: $userID, isExpense: $isExpense, title: $title, amount: $amount, category: $category, date: $date)';
   }
 
   @override
@@ -207,6 +234,7 @@ class _$ExpenseModelImpl implements _ExpenseModel {
         (other.runtimeType == runtimeType &&
             other is _$ExpenseModelImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.userID, userID) || other.userID == userID) &&
             (identical(other.isExpense, isExpense) ||
                 other.isExpense == isExpense) &&
             (identical(other.title, title) || other.title == title) &&
@@ -218,8 +246,8 @@ class _$ExpenseModelImpl implements _ExpenseModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, isExpense, title, amount, category, date);
+  int get hashCode => Object.hash(
+      runtimeType, id, userID, isExpense, title, amount, category, date);
 
   /// Create a copy of ExpenseModel
   /// with the given fields replaced by the non-null parameter values.
@@ -239,19 +267,26 @@ class _$ExpenseModelImpl implements _ExpenseModel {
 
 abstract class _ExpenseModel implements ExpenseModel {
   const factory _ExpenseModel(
-      {required final int id,
+      {@JsonKey(includeIfNull: false) final int? id,
+      required final String userID,
+      @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
       required final bool isExpense,
       required final String title,
       required final double amount,
       required final String category,
+      @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
       required final DateTime date}) = _$ExpenseModelImpl;
 
   factory _ExpenseModel.fromJson(Map<String, dynamic> json) =
       _$ExpenseModelImpl.fromJson;
 
   @override
-  int get id;
+  @JsonKey(includeIfNull: false)
+  int? get id; // Exclude if null
   @override
+  String get userID;
+  @override
+  @JsonKey(fromJson: _boolFromInt, toJson: _boolToInt)
   bool get isExpense;
   @override
   String get title;
@@ -260,6 +295,7 @@ abstract class _ExpenseModel implements ExpenseModel {
   @override
   String get category;
   @override
+  @JsonKey(fromJson: _dateFromString, toJson: _dateToString)
   DateTime get date;
 
   /// Create a copy of ExpenseModel

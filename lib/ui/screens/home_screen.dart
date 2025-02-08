@@ -1,5 +1,7 @@
+import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/core/models/expense_model.dart';
 import 'package:expense_tracker/data/colors/Colors.dart';
 import 'package:expense_tracker/ui/pages/analysis_page.dart';
 import 'package:expense_tracker/ui/pages/expense_page.dart';
@@ -8,6 +10,7 @@ import 'package:expense_tracker/ui/widgets/page_indicator_for_home_screen.dart';
 import 'package:expense_tracker/ui/widgets/styles/box_styles.dart';
 import 'package:expense_tracker/ui/widgets/titles/home_screen_titles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -74,7 +77,16 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor: UiColors.blueShade,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
-              onPressed: () {},
+              onPressed: () {
+                context.read<ExpenseBloc>().add(expenseAddData(
+                    expense: ExpenseModel(
+                        userID: "user1",
+                        isExpense: true,
+                        title: "shopping",
+                        amount: 12,
+                        category: "misc",
+                        date: DateTime.now())));
+              },
               child: Icon(
                 Icons.add,
                 size: 30,
