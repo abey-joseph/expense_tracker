@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
@@ -36,6 +37,26 @@ class Db {
       return true;
     } catch (e) {
       log("Error opening database reason - ${e.toString()}");
+      return false;
+    }
+  }
+
+  Future<bool> testInitDatabase() async {
+    directory = await getApplicationDocumentsDirectory();
+    final path = join(directory.path, 'expenses.db');
+
+    try {
+      // Check if the database already exists
+      if (!await File(path).exists()) {
+        // Copy from assets
+        ByteData data = await rootBundle.load('assets/db/expenses.db');
+        List<int> bytes = data.buffer.asUint8List();
+        await File(path).writeAsBytes(bytes);
+      }
+      db = await openDatabase(path);
+      return true;
+    } catch (e) {
+      log("Error copying test database reason - ${e.toString()}");
       return false;
     }
   }

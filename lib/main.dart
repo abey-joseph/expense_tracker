@@ -13,7 +13,9 @@ void main(List<String> args) async {
   configureDependencies();
 
   await getIt<FirebaseActions>().firebaseInit();
-  await getIt<Db>().initDatabase();
+  await getIt<Db>().testInitDatabase();
+
+  // need to do something if the ouput from the Db class is false
 
   runApp(MyApp());
 }
@@ -23,8 +25,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ExpenseBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ExpenseBloc(),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
             textTheme: GoogleFonts.poppinsTextTheme().apply(

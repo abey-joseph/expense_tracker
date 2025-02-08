@@ -16,12 +16,7 @@ class ExpensePage extends StatelessWidget {
         }
         return false;
       },
-      listener: (context, state) {
-        if (state is expenseAdded) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(state.comment)));
-        }
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Center(child: Text("Expense"));
       },
