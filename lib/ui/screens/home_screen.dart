@@ -10,7 +10,7 @@ import 'package:expense_tracker/ui/widgets/titles/home_screen_titles.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SliverToBoxAdapter(
-              child: Container(
+              child: SizedBox(
                   //color: Colors.red,
                   height: MediaQuery.of(context).size.height - 200,
                   child: PageView(

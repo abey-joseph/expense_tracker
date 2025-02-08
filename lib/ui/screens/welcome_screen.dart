@@ -4,7 +4,6 @@ import 'package:expense_tracker/ui/pages/signin_page.dart';
 import 'package:expense_tracker/ui/widgets/page_indicator_for_welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

@@ -12,6 +12,7 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
+import '../db/db.dart' as _i363;
 import '../firebase/firebase_actions.dart' as _i601;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -26,6 +27,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     gh.singleton<_i601.FirebaseActions>(() => _i601.FirebaseActions());
+    gh.lazySingleton<_i363.Db>(() => _i363.Db());
     return this;
   }
 }

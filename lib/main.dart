@@ -1,5 +1,6 @@
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/core/db/db.dart';
 import 'package:expense_tracker/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +11,7 @@ void main(List<String> args) async {
   configureDependencies();
 
   await getIt<FirebaseActions>().firebaseInit();
+  await getIt<Db>().initDatabase();
 
   runApp(MyApp());
 }
