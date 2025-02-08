@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:expense_tracker/ui/screens/loign_screen.dart';
 import 'package:expense_tracker/ui/screens/signin_screen.dart';
-import 'package:expense_tracker/ui/widgets/button.dart';
-import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -60,8 +58,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: (isAtLoginPage)
                       ? textStyle(20, Colors.deepPurpleAccent)
                       : textStyle(12, Colors.grey),
-                  child: Text(
-                    "Log In",
+                  child: GestureDetector(
+                    onTap: () {
+                      if (pageController.page != 0) {
+                        pageController.animateToPage(0,
+                            duration: Durations.medium1, curve: Curves.ease);
+                      }
+                    },
+                    child: Text(
+                      "Log In",
+                    ),
                   ),
                 ),
                 AnimatedDefaultTextStyle(
@@ -69,8 +75,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: (!isAtLoginPage)
                       ? textStyle(20, Colors.deepPurpleAccent)
                       : textStyle(12, Colors.grey),
-                  child: Text(
-                    "Sign In",
+                  child: GestureDetector(
+                    onTap: () {
+                      if (pageController.page != 1) {
+                        pageController.animateToPage(1,
+                            duration: Durations.medium1, curve: Curves.ease);
+                      }
+                    },
+                    child: Text(
+                      "Sign In",
+                    ),
                   ),
                 )
               ],
@@ -84,23 +98,38 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               width: 30,
             ),
             SmoothPageIndicator(
+              onDotClicked: (index) {
+                if (index == 1) {
+                  pageController.animateToPage(1,
+                      duration: Durations.medium1, curve: Curves.ease);
+                }
+                if (index == 0) {
+                  pageController.animateToPage(0,
+                      duration: Durations.medium1, curve: Curves.ease);
+                }
+              },
               controller: pageController,
               count: 2,
               effect: ExpandingDotsEffect(
-                  dotHeight: 5, dotWidth: 21, expansionFactor: 4),
+                  dotHeight: 10, dotWidth: 21, expansionFactor: 4),
             ),
             Flexible(child: SizedBox())
           ],
         ),
         SizedBox(height: 30),
         SizedBox(
-          height: 400,
-          child: PageView(
-            controller: pageController,
-            children: [
-              LoignScreen(),
-              SigninScreen(),
-            ],
+          height: 350,
+          child: SingleChildScrollView(
+            child: SizedBox(
+              height: 350,
+              child: PageView(
+                controller: pageController,
+                children: [
+                  LoignScreen(),
+                  SigninScreen(),
+                ],
+              ),
+            ),
           ),
         )
       ],
