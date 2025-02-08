@@ -343,7 +343,7 @@ mixin _$ExpenseState {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) =>
       throw _privateConstructorUsedError;
@@ -352,7 +352,7 @@ mixin _$ExpenseState {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) =>
       throw _privateConstructorUsedError;
@@ -361,7 +361,7 @@ mixin _$ExpenseState {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) =>
@@ -461,7 +461,7 @@ class _$expenseInitialImpl implements expenseInitial {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) {
     return expenseInitial();
@@ -473,7 +473,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) {
     return expenseInitial?.call();
@@ -485,7 +485,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) {
@@ -584,7 +584,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) {
     return expenseLoading();
@@ -596,7 +596,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) {
     return expenseLoading?.call();
@@ -608,7 +608,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) {
@@ -741,7 +741,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) {
     return expenseLoaded(expense);
@@ -753,7 +753,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) {
     return expenseLoaded?.call(expense);
@@ -765,7 +765,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) {
@@ -834,6 +834,8 @@ abstract class _$$expenseErrorImplCopyWith<$Res> {
   factory _$$expenseErrorImplCopyWith(
           _$expenseErrorImpl value, $Res Function(_$expenseErrorImpl) then) =
       __$$expenseErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -846,26 +848,51 @@ class __$$expenseErrorImplCopyWithImpl<$Res>
 
   /// Create a copy of ExpenseState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$expenseErrorImpl(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$expenseErrorImpl implements expenseError {
-  const _$expenseErrorImpl();
+  const _$expenseErrorImpl({required this.error});
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'ExpenseState.expenseError()';
+    return 'ExpenseState.expenseError(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$expenseErrorImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$expenseErrorImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ExpenseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$expenseErrorImplCopyWith<_$expenseErrorImpl> get copyWith =>
+      __$$expenseErrorImplCopyWithImpl<_$expenseErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -873,10 +900,10 @@ class _$expenseErrorImpl implements expenseError {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) {
-    return expenseError();
+    return expenseError(error);
   }
 
   @override
@@ -885,10 +912,10 @@ class _$expenseErrorImpl implements expenseError {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) {
-    return expenseError?.call();
+    return expenseError?.call(error);
   }
 
   @override
@@ -897,12 +924,12 @@ class _$expenseErrorImpl implements expenseError {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) {
     if (expenseError != null) {
-      return expenseError();
+      return expenseError(error);
     }
     return orElse();
   }
@@ -949,7 +976,16 @@ class _$expenseErrorImpl implements expenseError {
 }
 
 abstract class expenseError implements ExpenseState {
-  const factory expenseError() = _$expenseErrorImpl;
+  const factory expenseError({required final String error}) =
+      _$expenseErrorImpl;
+
+  String get error;
+
+  /// Create a copy of ExpenseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$expenseErrorImplCopyWith<_$expenseErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1023,7 +1059,7 @@ class _$expenseAddedImpl implements expenseAdded {
     required TResult Function() expenseInitial,
     required TResult Function() expenseLoading,
     required TResult Function(List<ExpenseModel> expense) expenseLoaded,
-    required TResult Function() expenseError,
+    required TResult Function(String error) expenseError,
     required TResult Function(String comment) expenseAdded,
   }) {
     return expenseAdded(comment);
@@ -1035,7 +1071,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult? Function()? expenseInitial,
     TResult? Function()? expenseLoading,
     TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult? Function()? expenseError,
+    TResult? Function(String error)? expenseError,
     TResult? Function(String comment)? expenseAdded,
   }) {
     return expenseAdded?.call(comment);
@@ -1047,7 +1083,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult Function()? expenseInitial,
     TResult Function()? expenseLoading,
     TResult Function(List<ExpenseModel> expense)? expenseLoaded,
-    TResult Function()? expenseError,
+    TResult Function(String error)? expenseError,
     TResult Function(String comment)? expenseAdded,
     required TResult orElse(),
   }) {

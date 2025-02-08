@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => ExpenseBloc(),
+          create: (context) => ExpenseBloc()..add(expenseFetchData()),
         ),
       ],
       child: MaterialApp(

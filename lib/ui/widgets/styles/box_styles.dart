@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 BoxDecoration homeScreenNavigationBoxStyle() {
   return BoxDecoration(
-    color: Colors.transparent,
+    color: UiColors.bgDark,
     border: Border.all(color: UiColors.whiteBg),
     borderRadius: BorderRadius.all(Radius.circular(30)),
   );

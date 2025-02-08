@@ -22,7 +22,7 @@ class ExpenseBloc extends Bloc<ExpenseEvent, ExpenseState> {
         emit(expenseLoaded(expense: list.toList()));
       } catch (e) {
         log("Error while trying to get data and emit new state to show the updated list, reason ${e.toString()}");
-        emit(ExpenseState.expenseError());
+        emit(ExpenseState.expenseError(error: e.toString()));
       }
     });
 
@@ -43,7 +43,7 @@ class ExpenseBloc extends Bloc<ExpenseEvent, ExpenseState> {
               emit(expenseLoaded(expense: list.toList()));
             } catch (e) {
               log("Error while trying to get data and emit new state to show the updated list, reason ${e.toString()}");
-              emit(ExpenseState.expenseError());
+              emit(ExpenseState.expenseError(error: e.toString()));
             }
           } else {
             emit(expenseAdded(comment: "Failed to add Expense"));

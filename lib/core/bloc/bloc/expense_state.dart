@@ -6,7 +6,8 @@ class ExpenseState with _$ExpenseState {
   const factory ExpenseState.expenseLoading() = expenseLoading;
   const factory ExpenseState.expenseLoaded(
       {required List<ExpenseModel> expense}) = expenseLoaded;
-  const factory ExpenseState.expenseError() = expenseError;
+  const factory ExpenseState.expenseError({required String error}) =
+      expenseError;
   const factory ExpenseState.expenseAdded({required String comment}) =
       expenseAdded;
 }
