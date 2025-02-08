@@ -42,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: 30,
+          height: 50,
         ),
         Center(
             child: SizedBox(
@@ -92,6 +92,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Flexible(child: SizedBox())
           ],
         ),
+        SizedBox(height: 30),
         SizedBox(
           height: 400,
           child: PageView(
