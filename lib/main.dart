@@ -15,6 +15,7 @@ void main(List<String> args) async {
   await getIt<FirebaseActions>().firebaseInit();
   await getIt<Db>().testInitDatabase();
 
+  //need to do something if the ouput from the FirebaseAction class is false
   // need to do something if the ouput from the Db class is false
 
   runApp(MyApp());

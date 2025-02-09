@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 Widget textField({
   required bool isPassWord,
   required TextEditingController controller,
+  TextInputType textInputType = TextInputType.text,
   String hintText = '',
+  VoidCallback? onTap,
 }) {
   return Padding(
     padding: const EdgeInsets.only(
@@ -11,6 +13,8 @@ Widget textField({
       right: 20,
     ),
     child: TextField(
+      onTap: onTap ?? () {},
+      keyboardType: textInputType,
       controller: controller,
       obscureText: isPassWord,
       decoration: InputDecoration(

@@ -3,6 +3,7 @@ import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/models/expense_model.dart';
 import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/ui/dialog/add_dialog.dart';
 import 'package:expense_tracker/ui/pages/analysis_page.dart';
 import 'package:expense_tracker/ui/pages/expense_page.dart';
 import 'package:expense_tracker/ui/screens/welcome_screen.dart';
@@ -85,14 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 onPressed: () {
-                  context.read<ExpenseBloc>().add(expenseAddData(
-                      expense: ExpenseModel(
-                          userID: "user1",
-                          isExpense: true,
-                          title: "shopping",
-                          amount: 12,
-                          category: "misc",
-                          date: DateTime.now())));
+                  showDialog(
+                      context: context, builder: (context) => AddDialog());
                 },
                 child: Icon(
                   Icons.add,
