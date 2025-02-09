@@ -17,11 +17,17 @@ class Db {
     final path = join(directory.path, 'expenses.db');
 
     try {
-      db = await openDatabase(
-        path,
-        version: 1,
-        onCreate: (db, version) async {
-          await db.execute('''
+      // Check if the database already exists
+      if (await databaseExists(path)) {
+        log("Database already exists. Opening existing database.");
+        db = await openDatabase(path);
+      } else {
+        log("Database does not exist. Creating new database.");
+        db = await openDatabase(
+          path,
+          version: 1,
+          onCreate: (db, version) async {
+            await db.execute('''
             CREATE TABLE expenses(
               id INTEGER PRIMARY KEY AUTOINCREMENT,
               userID TEXT,
@@ -30,10 +36,11 @@ class Db {
               amount REAL,
               category TEXT,
               date TEXT
-              )
-            ''');
-        },
-      );
+            )
+          ''');
+          },
+        );
+      }
       return true;
     } catch (e) {
       log("Error opening database reason - ${e.toString()}");

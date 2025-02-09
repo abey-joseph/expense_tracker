@@ -113,6 +113,7 @@ class _AddDialogState extends State<AddDialog> {
                           amount: double.parse(amountController.text),
                           category: categoryController.text,
                           date: pickedDate ?? DateTime.now())));
+                  Navigator.pop(context);
                 })
           ],
         ),

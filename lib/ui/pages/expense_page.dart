@@ -40,7 +40,8 @@ class ExpensePage extends StatelessWidget {
                         DataColumn(label: Text("Category")),
                         DataColumn(label: Text("Date")),
                       ],
-                      rows: List.generate(state.expense.length, (index) {
+                      rows: List.generate(state.expense.length, (count) {
+                        int index = (state.expense.length - 1) - count;
                         return DataRow(cells: [
                           DataCell(Text(state.expense[index].title)),
                           DataCell(

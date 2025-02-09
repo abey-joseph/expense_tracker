@@ -13,7 +13,7 @@ void main(List<String> args) async {
   configureDependencies();
 
   await getIt<FirebaseActions>().firebaseInit();
-  await getIt<Db>().testInitDatabase();
+  await getIt<Db>().initDatabase();
 
   //need to do something if the ouput from the FirebaseAction class is false
   // need to do something if the ouput from the Db class is false
