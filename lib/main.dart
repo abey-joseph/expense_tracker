@@ -3,9 +3,11 @@ import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/db/db.dart';
 import 'package:expense_tracker/ui/screens/splash_screen.dart';
+import 'package:expense_tracker/ui/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +20,10 @@ void main(List<String> args) async {
   //need to do something if the ouput from the FirebaseAction class is false
   // need to do something if the ouput from the Db class is false
 
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -33,7 +39,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        theme: ThemeData.dark().copyWith(
+        themeMode: themeProvider.themeMode,
+        theme: ThemeData.light().copyWith(
+            textTheme: GoogleFonts.poppinsTextTheme().apply(
+          bodyColor: Colors.black,
+          displayColor: Colors.black,
+        )),
+        darkTheme: ThemeData.dark().copyWith(
             textTheme: GoogleFonts.poppinsTextTheme().apply(
           bodyColor: Colors.white,
           displayColor: Colors.white,

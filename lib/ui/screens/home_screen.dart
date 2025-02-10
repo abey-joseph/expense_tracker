@@ -5,6 +5,7 @@ import 'package:expense_tracker/data/colors/Colors.dart';
 import 'package:expense_tracker/ui/dialog/add_dialog.dart';
 import 'package:expense_tracker/ui/pages/analysis_page.dart';
 import 'package:expense_tracker/ui/pages/expense_page.dart';
+import 'package:expense_tracker/ui/screens/settings_screen.dart';
 import 'package:expense_tracker/ui/screens/welcome_screen.dart';
 import 'package:expense_tracker/ui/widgets/page_indicator_for_home_screen.dart';
 import 'package:expense_tracker/ui/widgets/styles/box_styles.dart';
@@ -134,7 +135,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       },
                       icon: Icon(Icons.logout)),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => SettingsScreen()));
+                      },
+                      icon: Icon(Icons.settings)),
                 ],
               ),
               SliverToBoxAdapter(
