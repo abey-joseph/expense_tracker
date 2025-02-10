@@ -1,7 +1,8 @@
 import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
+import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/models/expense_model.dart';
-import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/data/colors/colors.dart';
 import 'package:expense_tracker/ui/widgets/button.dart';
 import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +33,9 @@ class _AddDialogState extends State<AddDialog> {
     return Dialog(
       child: Container(
         decoration: BoxDecoration(
-            color: UiColors.bgDark,
+            color: getIt<UiColors>().bgDark,
             borderRadius: BorderRadius.all(Radius.circular(20)),
-            border: Border.all(color: UiColors.whiteBg, width: 0.5)),
+            border: Border.all(color: getIt<UiColors>().whiteBg, width: 0.5)),
         padding: EdgeInsets.all(8),
         height: 450,
         child: Column(

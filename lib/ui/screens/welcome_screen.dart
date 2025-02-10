@@ -1,4 +1,5 @@
-import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/data/colors/colors.dart';
 import 'package:expense_tracker/ui/pages/loign_page.dart';
 import 'package:expense_tracker/ui/pages/signin_page.dart';
 import 'package:expense_tracker/ui/widgets/page_indicator_for_welcome_screen.dart';
@@ -83,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Text("Or login with  "),
             Text(
               "Google",
-              style: TextStyle(color: UiColors.blueShade),
+              style: TextStyle(color: getIt<UiColors>().blueShade),
             )
           ],
         ),

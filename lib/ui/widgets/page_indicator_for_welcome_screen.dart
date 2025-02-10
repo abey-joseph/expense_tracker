@@ -1,4 +1,5 @@
-import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/data/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -36,8 +37,8 @@ class PageIndicator extends StatelessWidget {
               dotHeight: barHeight,
               dotWidth: 21,
               expansionFactor: 4,
-              dotColor: UiColors.whiteBg,
-              activeDotColor: UiColors.blueShade),
+              dotColor: getIt<UiColors>().whiteBg,
+              activeDotColor: getIt<UiColors>().blueShade),
         ),
         Flexible(child: SizedBox())
       ],
@@ -70,9 +71,9 @@ class TextPageIndicator extends StatelessWidget {
         AnimatedDefaultTextStyle(
           duration: Duration(milliseconds: 100),
           style: (isAtFirstPage)
-              ? textStyle(
-                  isTextAnimate ? 21 : defaultTextSize, UiColors.blueShade)
-              : textStyle(defaultTextSize, UiColors.whiteBg),
+              ? textStyle(isTextAnimate ? 21 : defaultTextSize,
+                  getIt<UiColors>().blueShade)
+              : textStyle(defaultTextSize, getIt<UiColors>().whiteBg),
           child: GestureDetector(
             onTap: () {
               if (pageController.page != 0) {
@@ -88,9 +89,9 @@ class TextPageIndicator extends StatelessWidget {
         AnimatedDefaultTextStyle(
           duration: Duration(milliseconds: 100),
           style: (!isAtFirstPage)
-              ? textStyle(
-                  isTextAnimate ? 21 : defaultTextSize, UiColors.blueShade)
-              : textStyle(defaultTextSize, UiColors.whiteBg),
+              ? textStyle(isTextAnimate ? 21 : defaultTextSize,
+                  getIt<UiColors>().blueShade)
+              : textStyle(defaultTextSize, getIt<UiColors>().whiteBg),
           child: GestureDetector(
             onTap: () {
               if (pageController.page != 1) {

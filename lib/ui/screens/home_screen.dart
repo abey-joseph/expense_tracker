@@ -1,7 +1,7 @@
 import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
-import 'package:expense_tracker/data/colors/Colors.dart';
+import 'package:expense_tracker/data/colors/colors.dart';
 import 'package:expense_tracker/ui/dialog/add_dialog.dart';
 import 'package:expense_tracker/ui/pages/analysis_page.dart';
 import 'package:expense_tracker/ui/pages/expense_page.dart';
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               FloatingActionButton(
-                backgroundColor: UiColors.blueShade,
+                backgroundColor: getIt<UiColors>().blueShade,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 onPressed: () {
@@ -92,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Icon(
                   Icons.add,
                   size: 30,
+                  color: Colors.white,
                 ),
               ),
             ],

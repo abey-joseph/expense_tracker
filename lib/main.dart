@@ -19,6 +19,8 @@ void main(List<String> args) async {
 
   //need to do something if the ouput from the FirebaseAction class is false
   // need to do something if the ouput from the Db class is false
+  // when shared preference is added and theme is saved make sure the UiColors class also make changes based on the saved theme
+  //  -by default it is for Dark Theme
 
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeProvider(),
