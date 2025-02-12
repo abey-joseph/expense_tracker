@@ -13,7 +13,7 @@ class Page3 extends StatelessWidget {
               height: MediaQuery.of(context).size.height - 30,
               child: GestureDetector(
                 onLongPress: () => Navigator.of(context)
-                    .pushReplacement(MaterialPageRoute(builder: (context) {
+                    .push(MaterialPageRoute(builder: (context) {
                   return SplashScreen();
                 })),
                 child: Image.asset(
