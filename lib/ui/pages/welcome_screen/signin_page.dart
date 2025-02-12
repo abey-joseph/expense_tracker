@@ -3,7 +3,7 @@ import 'package:expense_tracker/ui/screens/home_screen.dart';
 import 'package:expense_tracker/ui/widgets/button.dart';
 import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import '../../core/firebase/firebase_actions.dart';
+import '../../../core/firebase/firebase_actions.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/data/colors/colors.dart';
-import 'package:expense_tracker/ui/pages/loign_page.dart';
-import 'package:expense_tracker/ui/pages/signin_page.dart';
+import 'package:expense_tracker/ui/pages/welcome_screen/loign_page.dart';
+import 'package:expense_tracker/ui/pages/welcome_screen/signin_page.dart';
 import 'package:expense_tracker/ui/widgets/page_indicator_for_welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

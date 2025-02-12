@@ -2,6 +2,7 @@ import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/db/db.dart';
+import 'package:expense_tracker/ui/screens/onboard_screen.dart';
 import 'package:expense_tracker/ui/screens/splash_screen.dart';
 import 'package:expense_tracker/ui/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
           displayColor: Colors.white,
         )),
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: OnboardScreen(),
       ),
     );
   }
