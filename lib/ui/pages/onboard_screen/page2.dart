@@ -9,10 +9,11 @@ class Page2 extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-              height: MediaQuery.of(context).size.height - 30,
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
               child: Image.asset(
                 "assets/images/on_board_screen/photo2.webp",
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.cover,
               ))
         ],
       ),
