@@ -1,3 +1,5 @@
+import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/core/shared_prefs/prefs.dart';
 import 'package:expense_tracker/ui/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +23,7 @@ class SettingsScreen extends StatelessWidget {
                   onChanged: (value) {
                     Provider.of<ThemeProvider>(context, listen: false)
                         .toggleTheme(value);
+                    getIt<Prefs>().saveThemeData(value);
                   }),
             ),
             Divider(indent: 20, endIndent: 20)

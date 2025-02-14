@@ -26,7 +26,7 @@ void main(List<String> args) async {
   //  -by default it is for Dark Theme
 
   runApp(ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
+    create: (context) => ThemeProvider()..init(),
     child: (initOutput) ? MyApp() : ErrorApp(),
   ));
 }
@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
