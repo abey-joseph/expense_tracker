@@ -53,5 +53,10 @@ class UserDataHive {
     }
   }
 
-  //
+  //save budget settings
+  saveBudgetData(bool isNeedBudget, int budget) async {
+    await box.put("isNeedBudget", isNeedBudget);
+    await box.put("budget", budget);
+    log("saved budget details in hive");
+  }
 }

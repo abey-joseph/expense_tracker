@@ -6,11 +6,12 @@ Widget textField({
   TextInputType textInputType = TextInputType.text,
   String hintText = '',
   VoidCallback? onTap,
+  bool noNeedPadding = false,
 }) {
   return Padding(
-    padding: const EdgeInsets.only(
-      left: 20,
-      right: 20,
+    padding: EdgeInsets.only(
+      left: noNeedPadding ? 0 : 20,
+      right: noNeedPadding ? 0 : 20,
     ),
     child: TextField(
       onTap: onTap ?? () {},
