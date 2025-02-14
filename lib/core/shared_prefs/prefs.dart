@@ -59,8 +59,4 @@ class Prefs {
       return false;
     }
   }
-
-  // check if first time sign in or not
-  // retrive data if not first time
-  // save data if first time
 }

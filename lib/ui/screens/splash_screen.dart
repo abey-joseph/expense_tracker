@@ -1,6 +1,8 @@
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
 import 'package:expense_tracker/ui/screens/home_screen.dart';
+import 'package:expense_tracker/ui/screens/user_data_edit_screen.dart';
 import 'package:expense_tracker/ui/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((duration) {
+    WidgetsBinding.instance.addPostFrameCallback((duration) async {
       // get the current user
       User? user = getIt<FirebaseActions>().currentUser;
 
@@ -30,6 +32,21 @@ class _SplashScreenState extends State<SplashScreen> {
             MaterialPageRoute(builder: (context) => WelcomeScreen()));
       } else {
         //if there is something means already login and can go to the home screen
+
+        await getIt<UserDataHive>().hiveInit();
+
+        bool isFirstTimeForThisUser =
+            await getIt<UserDataHive>().isFirstTimeForThisUser();
+
+        if (!mounted) return;
+
+        if (isFirstTimeForThisUser) {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => UserDataEditScreen()));
+        } else {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => HomeScreen()));
+        }
 
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => HomeScreen()));

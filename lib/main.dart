@@ -2,6 +2,7 @@ import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/db/db.dart';
+import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
 import 'package:expense_tracker/core/shared_prefs/prefs.dart';
 import 'package:expense_tracker/ui/screens/onboard_screen.dart';
 import 'package:expense_tracker/ui/screens/splash_screen.dart';

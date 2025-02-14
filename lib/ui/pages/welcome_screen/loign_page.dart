@@ -1,6 +1,8 @@
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
+import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
 import 'package:expense_tracker/ui/screens/home_screen.dart';
+import 'package:expense_tracker/ui/screens/user_data_edit_screen.dart';
 import 'package:expense_tracker/ui/widgets/button.dart';
 import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
@@ -40,8 +42,20 @@ class LoignScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("Login Success")));
 
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                await getIt<UserDataHive>().hiveInit();
+
+                bool isFirstTimeForThisUser =
+                    await getIt<UserDataHive>().isFirstTimeForThisUser();
+
+                if (!context.mounted) return;
+
+                if (isFirstTimeForThisUser) {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => UserDataEditScreen()));
+                } else {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                }
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text(
