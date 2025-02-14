@@ -28,8 +28,8 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i25.Prefs>(() => _i25.Prefs());
     gh.singleton<_i601.FirebaseActions>(() => _i601.FirebaseActions());
+    gh.singleton<_i25.Prefs>(() => _i25.Prefs());
     gh.lazySingleton<_i363.Db>(() => _i363.Db());
     gh.lazySingleton<_i185.UiColors>(() => _i185.UiColors());
     return this;

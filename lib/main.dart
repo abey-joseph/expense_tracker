@@ -4,6 +4,7 @@ import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/db/db.dart';
 import 'package:expense_tracker/core/shared_prefs/prefs.dart';
 import 'package:expense_tracker/ui/screens/onboard_screen.dart';
+import 'package:expense_tracker/ui/screens/splash_screen.dart';
 import 'package:expense_tracker/ui/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,9 +22,6 @@ void main(List<String> args) async {
   initOutput = await getIt<FirebaseActions>().firebaseInit();
   initOutput = await getIt<Db>().initDatabase();
   initOutput = await getIt<Prefs>().intilialize();
-
-  // when shared preference is added and theme is saved make sure the UiColors class also make changes based on the saved theme
-  //  -by default it is for Dark Theme
 
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeProvider()..init(),
@@ -57,7 +55,9 @@ class MyApp extends StatelessWidget {
           displayColor: Colors.white,
         )),
         debugShowCheckedModeBanner: false,
-        home: OnboardScreen(),
+        home: getIt<Prefs>().isAppOpenedForFirstTime()
+            ? OnboardScreen()
+            : SplashScreen(),
       ),
     );
   }

@@ -45,6 +45,21 @@ class Prefs {
   }
 
   // first time opening or not to show the onboarding screen
+  bool isAppOpenedForFirstTime() {
+    try {
+      if (sp.getBool('isFirstTimeOpening') == null ||
+          sp.getBool("isFirstTimeOpening") == true) {
+        sp.setBool("isFirstTimeOpening", false);
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      log("Error in Prefs while trying to check isAppOpenedForFirstTime, reason - ${e.toString()}");
+      return false;
+    }
+  }
+
   // check if first time sign in or not
   // retrive data if not first time
   // save data if first time
