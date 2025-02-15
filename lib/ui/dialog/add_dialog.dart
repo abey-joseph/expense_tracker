@@ -1,4 +1,4 @@
-import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
+import 'package:expense_tracker/core/bloc/expense/expense_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/models/expense_model.dart';

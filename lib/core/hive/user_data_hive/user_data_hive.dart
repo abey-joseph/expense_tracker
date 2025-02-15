@@ -59,4 +59,28 @@ class UserDataHive {
     await box.put("budget", budget);
     log("saved budget details in hive");
   }
+
+  //get budget data
+  bool isNeedBudget() {
+    try {
+      if (box.get("isNeedBudget")) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      log("Error while trying to get isNeedBudget data from hive, reason - ${e.toString()}");
+      return false;
+    }
+  }
+
+  //get budget data
+  int getBudget() {
+    try {
+      return box.get("budget");
+    } catch (e) {
+      log("Error while trying to get budget data from hive, reason - ${e.toString()}");
+      return 0;
+    }
+  }
 }

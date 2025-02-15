@@ -1,4 +1,5 @@
-import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
+import 'package:expense_tracker/core/bloc/expense/expense_bloc.dart';
+import 'package:expense_tracker/core/bloc/user_data/user_data_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/data/colors/colors.dart';
@@ -111,7 +112,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       title(text: "Budget for the Month", size: 20),
-                      title(text: "\$500", size: 35),
+                      BlocBuilder<UserDataBloc, UserDataState>(
+                        builder: (context, state) {
+                          return title(
+                              text: (state is userDataLoaded)
+                                  ? state.budget.toString()
+                                  : "0",
+                              size: 35);
+                        },
+                      ),
                       SizedBox(
                         height: 15,
                       )

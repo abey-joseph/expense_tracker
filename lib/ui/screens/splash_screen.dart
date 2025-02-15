@@ -1,3 +1,4 @@
+import 'package:expense_tracker/core/bloc/user_data/user_data_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
@@ -6,6 +7,7 @@ import 'package:expense_tracker/ui/screens/user_data_edit_screen.dart';
 import 'package:expense_tracker/ui/screens/welcome_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -44,12 +46,10 @@ class _SplashScreenState extends State<SplashScreen> {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => UserDataEditScreen()));
         } else {
+          context.read<UserDataBloc>().add(userDataStarted());
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => HomeScreen()));
         }
-
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => HomeScreen()));
       }
     });
   }

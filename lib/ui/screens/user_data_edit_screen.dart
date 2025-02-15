@@ -1,10 +1,12 @@
 import 'dart:developer';
 
+import 'package:expense_tracker/core/bloc/user_data/user_data_bloc.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
 import 'package:expense_tracker/ui/screens/home_screen.dart';
 import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserDataEditScreen extends StatefulWidget {
   const UserDataEditScreen({super.key});
@@ -17,6 +19,14 @@ class _UserDataEditScreenState extends State<UserDataEditScreen> {
   final TextEditingController budgetTextController = TextEditingController();
 
   bool showBudgetTextField = true;
+
+  late UserDataBloc userDataBloc;
+
+  @override
+  void initState() {
+    super.initState();
+    userDataBloc = context.read<UserDataBloc>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +78,10 @@ class _UserDataEditScreenState extends State<UserDataEditScreen> {
   }
 
   @override
-  void dispose() {
+  void dispose() async {
     super.dispose();
-    getIt<UserDataHive>().saveBudgetData(
+    await getIt<UserDataHive>().saveBudgetData(
         showBudgetTextField, int.parse(budgetTextController.text));
+    userDataBloc.add(userDataStarted());
   }
 }

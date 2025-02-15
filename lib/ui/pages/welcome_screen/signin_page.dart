@@ -1,3 +1,4 @@
+import 'package:expense_tracker/core/bloc/user_data/user_data_bloc.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/hive/user_data_hive/user_data_hive.dart';
 import 'package:expense_tracker/ui/screens/home_screen.dart';
@@ -5,6 +6,7 @@ import 'package:expense_tracker/ui/screens/user_data_edit_screen.dart';
 import 'package:expense_tracker/ui/widgets/button.dart';
 import 'package:expense_tracker/ui/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/firebase/firebase_actions.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -58,6 +60,7 @@ class SigninScreen extends StatelessWidget {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => UserDataEditScreen()));
                 } else {
+                  context.read<UserDataBloc>().add(userDataStarted());
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => HomeScreen()));
                 }

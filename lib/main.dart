@@ -1,4 +1,5 @@
-import 'package:expense_tracker/core/bloc/bloc/expense_bloc.dart';
+import 'package:expense_tracker/core/bloc/expense/expense_bloc.dart';
+import 'package:expense_tracker/core/bloc/user_data/user_data_bloc.dart';
 import 'package:expense_tracker/core/firebase/firebase_actions.dart';
 import 'package:expense_tracker/core/get_it/get_it.dart';
 import 'package:expense_tracker/core/db/db.dart';
@@ -41,6 +42,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => ExpenseBloc()..add(expenseFetchData()),
+        ),
+        BlocProvider(
+          create: (context) => UserDataBloc(),
         ),
       ],
       child: MaterialApp(
