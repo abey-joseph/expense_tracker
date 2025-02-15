@@ -88,4 +88,48 @@ class Db {
       return false;
     }
   }
+
+  Future<List<Map<String, dynamic>>> getDataFromDb(int id) async {
+    try {
+      List<Map<String, dynamic>> userExpenses = await db.query(
+        'expenses',
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+      return userExpenses;
+    } catch (e) {
+      log("Error while retrieving data for expense item ID- $id, reason - ${e.toString()}");
+      return [];
+    }
+  }
+
+  Future<bool> deleteDataAtId(int id) async {
+    try {
+      await db.delete(
+        "expenses",
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+      return true;
+    } catch (e) {
+      log("Error while trying to delete Data from table, reason - ${e.toString()}");
+      return false;
+    }
+  }
+
+  Future<bool> editDataAt(int id, Map<String, dynamic> expense) async {
+    try {
+      await db.update(
+        "expenses",
+        expense,
+        where: 'id = ?',
+        whereArgs: [id],
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      return true;
+    } catch (e) {
+      log("Error while trying to Edit Data at table, reason - ${e.toString()}");
+      return false;
+    }
+  }
 }

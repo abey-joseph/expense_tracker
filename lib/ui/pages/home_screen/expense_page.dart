@@ -1,4 +1,5 @@
 import 'package:expense_tracker/core/bloc/expense/expense_bloc.dart';
+import 'package:expense_tracker/ui/dialog/edit_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -42,14 +43,24 @@ class ExpensePage extends StatelessWidget {
                       ],
                       rows: List.generate(state.expense.length, (count) {
                         int index = (state.expense.length - 1) - count;
-                        return DataRow(cells: [
-                          DataCell(Text(state.expense[index].title)),
-                          DataCell(
-                              Text(state.expense[index].amount.toString())),
-                          DataCell(Text(state.expense[index].category)),
-                          DataCell(Text(DateFormat('dd MM yyyy')
-                              .format(state.expense[index].date))),
-                        ]);
+                        return DataRow(
+                            onLongPress: () {
+                              context.read<ExpenseBloc>().add(
+                                  expenseEditTrigger(
+                                      id: state.expense[index].id!));
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => EditDialog(
+                                      uid: state.expense[index].userID));
+                            },
+                            cells: [
+                              DataCell(Text(state.expense[index].title)),
+                              DataCell(
+                                  Text(state.expense[index].amount.toString())),
+                              DataCell(Text(state.expense[index].category)),
+                              DataCell(Text(DateFormat('dd MM yyyy')
+                                  .format(state.expense[index].date))),
+                            ]);
                       })),
                   SizedBox(height: 130),
                 ],

@@ -19,9 +19,7 @@ Widget button({
     child: Text(
       buttonText,
       style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-          color: getIt<UiColors>().whiteBg),
+          fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white),
     ),
   );
 }

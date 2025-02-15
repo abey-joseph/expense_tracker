@@ -10,4 +10,9 @@ class ExpenseState with _$ExpenseState {
       expenseError;
   const factory ExpenseState.expenseAdded({required String comment}) =
       expenseAdded;
+  const factory ExpenseState.expenseEditLoading() = expenseEditLoading;
+  const factory ExpenseState.expenseDataForEdit(
+      {required ExpenseModel expense}) = expenseDataForEdit;
+  const factory ExpenseState.expenseEdited({required String comment}) =
+      expenseEdited;
 }

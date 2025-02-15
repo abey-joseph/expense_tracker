@@ -54,5 +54,28 @@ class ExpenseBloc extends Bloc<ExpenseEvent, ExpenseState> {
         }
       },
     );
+    //
+    on<expenseEditTrigger>(
+      (event, emit) async {
+        //emit editDataLoading state
+        emit(expenseEditLoading());
+        //get data from databse based on event.uid
+        ExpenseModel expense = await DbOperation.getExpenseData(event.id);
+
+        //emit expenseDataForEdit with the expense Data
+        emit(expenseDataForEdit(expense: expense));
+      },
+    );
+
+    on<expenseEditData>((event, emit) async {
+      bool output = await DbOperation.editExpenseData(event.expense);
+
+      if (output) {
+        emit(expenseEdited(comment: "Edit Done"));
+        add(expenseFetchData());
+      } else {
+        emit(expenseEdited(comment: "Edit Failed"));
+      }
+    });
   }
 }
