@@ -120,6 +120,8 @@ class _EditDialogState extends State<EditDialog> {
                           buttonText: "DELETE",
                           onPressed: () {
                             //code to delete
+                            context.read<ExpenseBloc>().add(
+                                expenseDeleteTrigger(id: state.expense.id!));
                             Navigator.pop(context);
                           }),
                       SizedBox(width: 15),

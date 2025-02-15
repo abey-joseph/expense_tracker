@@ -15,4 +15,6 @@ class ExpenseState with _$ExpenseState {
       {required ExpenseModel expense}) = expenseDataForEdit;
   const factory ExpenseState.expenseEdited({required String comment}) =
       expenseEdited;
+  const factory ExpenseState.expenseDeleted({required String comment}) =
+      expenseDeleted;
 }

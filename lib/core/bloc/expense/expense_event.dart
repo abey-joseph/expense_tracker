@@ -9,4 +9,6 @@ class ExpenseEvent with _$ExpenseEvent {
       expenseEditTrigger;
   const factory ExpenseEvent.expenseEdit({required ExpenseModel expense}) =
       expenseEditData;
+  const factory ExpenseEvent.expenseDeleteTrigger({required int id}) =
+      expenseDeleteTrigger;
 }

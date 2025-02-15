@@ -53,6 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text(state.comment)));
         }
+        if (state is expenseDeleted) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(state.comment)));
+        }
       },
       child: Scaffold(
         floatingActionButton: Padding(

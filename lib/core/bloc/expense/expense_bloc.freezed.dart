@@ -22,6 +22,7 @@ mixin _$ExpenseEvent {
     required TResult Function(ExpenseModel expense) expenseAddData,
     required TResult Function(int id) expenseEditTrigger,
     required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ExpenseEvent {
     TResult? Function(ExpenseModel expense)? expenseAddData,
     TResult? Function(int id)? expenseEditTrigger,
     TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ExpenseEvent {
     TResult Function(ExpenseModel expense)? expenseAddData,
     TResult Function(int id)? expenseEditTrigger,
     TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ExpenseEvent {
     required TResult Function(expenseAddData value) expenseAddData,
     required TResult Function(expenseEditTrigger value) expenseEditTrigger,
     required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ExpenseEvent {
     TResult? Function(expenseAddData value)? expenseAddData,
     TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ExpenseEvent {
     TResult Function(expenseAddData value)? expenseAddData,
     TResult Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +140,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     required TResult Function(ExpenseModel expense) expenseAddData,
     required TResult Function(int id) expenseEditTrigger,
     required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
   }) {
     return expenseFetchData();
   }
@@ -145,6 +152,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     TResult? Function(ExpenseModel expense)? expenseAddData,
     TResult? Function(int id)? expenseEditTrigger,
     TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
   }) {
     return expenseFetchData?.call();
   }
@@ -156,6 +164,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     TResult Function(ExpenseModel expense)? expenseAddData,
     TResult Function(int id)? expenseEditTrigger,
     TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseFetchData != null) {
@@ -171,6 +180,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     required TResult Function(expenseAddData value) expenseAddData,
     required TResult Function(expenseEditTrigger value) expenseEditTrigger,
     required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
   }) {
     return expenseFetchData(this);
   }
@@ -182,6 +192,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     TResult? Function(expenseAddData value)? expenseAddData,
     TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
   }) {
     return expenseFetchData?.call(this);
   }
@@ -193,6 +204,7 @@ class _$expenseFetchDataImpl implements expenseFetchData {
     TResult Function(expenseAddData value)? expenseAddData,
     TResult Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseFetchData != null) {
@@ -291,6 +303,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     required TResult Function(ExpenseModel expense) expenseAddData,
     required TResult Function(int id) expenseEditTrigger,
     required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
   }) {
     return expenseAddData(expense);
   }
@@ -302,6 +315,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     TResult? Function(ExpenseModel expense)? expenseAddData,
     TResult? Function(int id)? expenseEditTrigger,
     TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
   }) {
     return expenseAddData?.call(expense);
   }
@@ -313,6 +327,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     TResult Function(ExpenseModel expense)? expenseAddData,
     TResult Function(int id)? expenseEditTrigger,
     TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseAddData != null) {
@@ -328,6 +343,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     required TResult Function(expenseAddData value) expenseAddData,
     required TResult Function(expenseEditTrigger value) expenseEditTrigger,
     required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
   }) {
     return expenseAddData(this);
   }
@@ -339,6 +355,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     TResult? Function(expenseAddData value)? expenseAddData,
     TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
   }) {
     return expenseAddData?.call(this);
   }
@@ -350,6 +367,7 @@ class _$expenseAddDataImpl implements expenseAddData {
     TResult Function(expenseAddData value)? expenseAddData,
     TResult Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseAddData != null) {
@@ -445,6 +463,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     required TResult Function(ExpenseModel expense) expenseAddData,
     required TResult Function(int id) expenseEditTrigger,
     required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
   }) {
     return expenseEditTrigger(id);
   }
@@ -456,6 +475,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     TResult? Function(ExpenseModel expense)? expenseAddData,
     TResult? Function(int id)? expenseEditTrigger,
     TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
   }) {
     return expenseEditTrigger?.call(id);
   }
@@ -467,6 +487,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     TResult Function(ExpenseModel expense)? expenseAddData,
     TResult Function(int id)? expenseEditTrigger,
     TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseEditTrigger != null) {
@@ -482,6 +503,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     required TResult Function(expenseAddData value) expenseAddData,
     required TResult Function(expenseEditTrigger value) expenseEditTrigger,
     required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
   }) {
     return expenseEditTrigger(this);
   }
@@ -493,6 +515,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     TResult? Function(expenseAddData value)? expenseAddData,
     TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
   }) {
     return expenseEditTrigger?.call(this);
   }
@@ -504,6 +527,7 @@ class _$expenseEditTriggerImpl implements expenseEditTrigger {
     TResult Function(expenseAddData value)? expenseAddData,
     TResult Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseEditTrigger != null) {
@@ -611,6 +635,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     required TResult Function(ExpenseModel expense) expenseAddData,
     required TResult Function(int id) expenseEditTrigger,
     required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
   }) {
     return expenseEdit(expense);
   }
@@ -622,6 +647,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     TResult? Function(ExpenseModel expense)? expenseAddData,
     TResult? Function(int id)? expenseEditTrigger,
     TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
   }) {
     return expenseEdit?.call(expense);
   }
@@ -633,6 +659,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     TResult Function(ExpenseModel expense)? expenseAddData,
     TResult Function(int id)? expenseEditTrigger,
     TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseEdit != null) {
@@ -648,6 +675,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     required TResult Function(expenseAddData value) expenseAddData,
     required TResult Function(expenseEditTrigger value) expenseEditTrigger,
     required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
   }) {
     return expenseEdit(this);
   }
@@ -659,6 +687,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     TResult? Function(expenseAddData value)? expenseAddData,
     TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
   }) {
     return expenseEdit?.call(this);
   }
@@ -670,6 +699,7 @@ class _$expenseEditDataImpl implements expenseEditData {
     TResult Function(expenseAddData value)? expenseAddData,
     TResult Function(expenseEditTrigger value)? expenseEditTrigger,
     TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
     required TResult orElse(),
   }) {
     if (expenseEdit != null) {
@@ -693,6 +723,167 @@ abstract class expenseEditData implements ExpenseEvent {
 }
 
 /// @nodoc
+abstract class _$$expenseDeleteTriggerImplCopyWith<$Res> {
+  factory _$$expenseDeleteTriggerImplCopyWith(_$expenseDeleteTriggerImpl value,
+          $Res Function(_$expenseDeleteTriggerImpl) then) =
+      __$$expenseDeleteTriggerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$expenseDeleteTriggerImplCopyWithImpl<$Res>
+    extends _$ExpenseEventCopyWithImpl<$Res, _$expenseDeleteTriggerImpl>
+    implements _$$expenseDeleteTriggerImplCopyWith<$Res> {
+  __$$expenseDeleteTriggerImplCopyWithImpl(_$expenseDeleteTriggerImpl _value,
+      $Res Function(_$expenseDeleteTriggerImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ExpenseEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$expenseDeleteTriggerImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$expenseDeleteTriggerImpl implements expenseDeleteTrigger {
+  const _$expenseDeleteTriggerImpl({required this.id});
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'ExpenseEvent.expenseDeleteTrigger(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$expenseDeleteTriggerImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of ExpenseEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$expenseDeleteTriggerImplCopyWith<_$expenseDeleteTriggerImpl>
+      get copyWith =>
+          __$$expenseDeleteTriggerImplCopyWithImpl<_$expenseDeleteTriggerImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() expenseFetchData,
+    required TResult Function(ExpenseModel expense) expenseAddData,
+    required TResult Function(int id) expenseEditTrigger,
+    required TResult Function(ExpenseModel expense) expenseEdit,
+    required TResult Function(int id) expenseDeleteTrigger,
+  }) {
+    return expenseDeleteTrigger(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? expenseFetchData,
+    TResult? Function(ExpenseModel expense)? expenseAddData,
+    TResult? Function(int id)? expenseEditTrigger,
+    TResult? Function(ExpenseModel expense)? expenseEdit,
+    TResult? Function(int id)? expenseDeleteTrigger,
+  }) {
+    return expenseDeleteTrigger?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? expenseFetchData,
+    TResult Function(ExpenseModel expense)? expenseAddData,
+    TResult Function(int id)? expenseEditTrigger,
+    TResult Function(ExpenseModel expense)? expenseEdit,
+    TResult Function(int id)? expenseDeleteTrigger,
+    required TResult orElse(),
+  }) {
+    if (expenseDeleteTrigger != null) {
+      return expenseDeleteTrigger(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(expenseFetchData value) expenseFetchData,
+    required TResult Function(expenseAddData value) expenseAddData,
+    required TResult Function(expenseEditTrigger value) expenseEditTrigger,
+    required TResult Function(expenseEditData value) expenseEdit,
+    required TResult Function(expenseDeleteTrigger value) expenseDeleteTrigger,
+  }) {
+    return expenseDeleteTrigger(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(expenseFetchData value)? expenseFetchData,
+    TResult? Function(expenseAddData value)? expenseAddData,
+    TResult? Function(expenseEditTrigger value)? expenseEditTrigger,
+    TResult? Function(expenseEditData value)? expenseEdit,
+    TResult? Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
+  }) {
+    return expenseDeleteTrigger?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(expenseFetchData value)? expenseFetchData,
+    TResult Function(expenseAddData value)? expenseAddData,
+    TResult Function(expenseEditTrigger value)? expenseEditTrigger,
+    TResult Function(expenseEditData value)? expenseEdit,
+    TResult Function(expenseDeleteTrigger value)? expenseDeleteTrigger,
+    required TResult orElse(),
+  }) {
+    if (expenseDeleteTrigger != null) {
+      return expenseDeleteTrigger(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class expenseDeleteTrigger implements ExpenseEvent {
+  const factory expenseDeleteTrigger({required final int id}) =
+      _$expenseDeleteTriggerImpl;
+
+  int get id;
+
+  /// Create a copy of ExpenseEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$expenseDeleteTriggerImplCopyWith<_$expenseDeleteTriggerImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ExpenseState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -704,6 +895,7 @@ mixin _$ExpenseState {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -716,6 +908,7 @@ mixin _$ExpenseState {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -728,6 +921,7 @@ mixin _$ExpenseState {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -741,6 +935,7 @@ mixin _$ExpenseState {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -753,6 +948,7 @@ mixin _$ExpenseState {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -765,6 +961,7 @@ mixin _$ExpenseState {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -840,6 +1037,7 @@ class _$expenseInitialImpl implements expenseInitial {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseInitial();
   }
@@ -855,6 +1053,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseInitial?.call();
   }
@@ -870,6 +1069,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseInitial != null) {
@@ -889,6 +1089,7 @@ class _$expenseInitialImpl implements expenseInitial {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseInitial(this);
   }
@@ -904,6 +1105,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseInitial?.call(this);
   }
@@ -919,6 +1121,7 @@ class _$expenseInitialImpl implements expenseInitial {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseInitial != null) {
@@ -981,6 +1184,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseLoading();
   }
@@ -996,6 +1200,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseLoading?.call();
   }
@@ -1011,6 +1216,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseLoading != null) {
@@ -1030,6 +1236,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseLoading(this);
   }
@@ -1045,6 +1252,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseLoading?.call(this);
   }
@@ -1060,6 +1268,7 @@ class _$expenseLoadingImpl implements expenseLoading {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseLoading != null) {
@@ -1156,6 +1365,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseLoaded(expense);
   }
@@ -1171,6 +1381,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseLoaded?.call(expense);
   }
@@ -1186,6 +1397,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseLoaded != null) {
@@ -1205,6 +1417,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseLoaded(this);
   }
@@ -1220,6 +1433,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseLoaded?.call(this);
   }
@@ -1235,6 +1449,7 @@ class _$expenseLoadedImpl implements expenseLoaded {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseLoaded != null) {
@@ -1333,6 +1548,7 @@ class _$expenseErrorImpl implements expenseError {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseError(error);
   }
@@ -1348,6 +1564,7 @@ class _$expenseErrorImpl implements expenseError {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseError?.call(error);
   }
@@ -1363,6 +1580,7 @@ class _$expenseErrorImpl implements expenseError {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseError != null) {
@@ -1382,6 +1600,7 @@ class _$expenseErrorImpl implements expenseError {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseError(this);
   }
@@ -1397,6 +1616,7 @@ class _$expenseErrorImpl implements expenseError {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseError?.call(this);
   }
@@ -1412,6 +1632,7 @@ class _$expenseErrorImpl implements expenseError {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseError != null) {
@@ -1510,6 +1731,7 @@ class _$expenseAddedImpl implements expenseAdded {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseAdded(comment);
   }
@@ -1525,6 +1747,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseAdded?.call(comment);
   }
@@ -1540,6 +1763,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseAdded != null) {
@@ -1559,6 +1783,7 @@ class _$expenseAddedImpl implements expenseAdded {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseAdded(this);
   }
@@ -1574,6 +1799,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseAdded?.call(this);
   }
@@ -1589,6 +1815,7 @@ class _$expenseAddedImpl implements expenseAdded {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseAdded != null) {
@@ -1660,6 +1887,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseEditLoading();
   }
@@ -1675,6 +1903,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseEditLoading?.call();
   }
@@ -1690,6 +1919,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseEditLoading != null) {
@@ -1709,6 +1939,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseEditLoading(this);
   }
@@ -1724,6 +1955,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseEditLoading?.call(this);
   }
@@ -1739,6 +1971,7 @@ class _$expenseEditLoadingImpl implements expenseEditLoading {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseEditLoading != null) {
@@ -1841,6 +2074,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseDataForEdit(expense);
   }
@@ -1856,6 +2090,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseDataForEdit?.call(expense);
   }
@@ -1871,6 +2106,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseDataForEdit != null) {
@@ -1890,6 +2126,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseDataForEdit(this);
   }
@@ -1905,6 +2142,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseDataForEdit?.call(this);
   }
@@ -1920,6 +2158,7 @@ class _$expenseDataForEditImpl implements expenseDataForEdit {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseDataForEdit != null) {
@@ -2018,6 +2257,7 @@ class _$expenseEditedImpl implements expenseEdited {
     required TResult Function() expenseEditLoading,
     required TResult Function(ExpenseModel expense) expenseDataForEdit,
     required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
   }) {
     return expenseEdited(comment);
   }
@@ -2033,6 +2273,7 @@ class _$expenseEditedImpl implements expenseEdited {
     TResult? Function()? expenseEditLoading,
     TResult? Function(ExpenseModel expense)? expenseDataForEdit,
     TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
   }) {
     return expenseEdited?.call(comment);
   }
@@ -2048,6 +2289,7 @@ class _$expenseEditedImpl implements expenseEdited {
     TResult Function()? expenseEditLoading,
     TResult Function(ExpenseModel expense)? expenseDataForEdit,
     TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseEdited != null) {
@@ -2067,6 +2309,7 @@ class _$expenseEditedImpl implements expenseEdited {
     required TResult Function(expenseEditLoading value) expenseEditLoading,
     required TResult Function(expenseDataForEdit value) expenseDataForEdit,
     required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
   }) {
     return expenseEdited(this);
   }
@@ -2082,6 +2325,7 @@ class _$expenseEditedImpl implements expenseEdited {
     TResult? Function(expenseEditLoading value)? expenseEditLoading,
     TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
   }) {
     return expenseEdited?.call(this);
   }
@@ -2097,6 +2341,7 @@ class _$expenseEditedImpl implements expenseEdited {
     TResult Function(expenseEditLoading value)? expenseEditLoading,
     TResult Function(expenseDataForEdit value)? expenseDataForEdit,
     TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
     required TResult orElse(),
   }) {
     if (expenseEdited != null) {
@@ -2116,5 +2361,189 @@ abstract class expenseEdited implements ExpenseState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$expenseEditedImplCopyWith<_$expenseEditedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$expenseDeletedImplCopyWith<$Res> {
+  factory _$$expenseDeletedImplCopyWith(_$expenseDeletedImpl value,
+          $Res Function(_$expenseDeletedImpl) then) =
+      __$$expenseDeletedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String comment});
+}
+
+/// @nodoc
+class __$$expenseDeletedImplCopyWithImpl<$Res>
+    extends _$ExpenseStateCopyWithImpl<$Res, _$expenseDeletedImpl>
+    implements _$$expenseDeletedImplCopyWith<$Res> {
+  __$$expenseDeletedImplCopyWithImpl(
+      _$expenseDeletedImpl _value, $Res Function(_$expenseDeletedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ExpenseState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? comment = null,
+  }) {
+    return _then(_$expenseDeletedImpl(
+      comment: null == comment
+          ? _value.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$expenseDeletedImpl implements expenseDeleted {
+  const _$expenseDeletedImpl({required this.comment});
+
+  @override
+  final String comment;
+
+  @override
+  String toString() {
+    return 'ExpenseState.expenseDeleted(comment: $comment)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$expenseDeletedImpl &&
+            (identical(other.comment, comment) || other.comment == comment));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, comment);
+
+  /// Create a copy of ExpenseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$expenseDeletedImplCopyWith<_$expenseDeletedImpl> get copyWith =>
+      __$$expenseDeletedImplCopyWithImpl<_$expenseDeletedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() expenseInitial,
+    required TResult Function() expenseLoading,
+    required TResult Function(List<ExpenseModel> expense) expenseLoaded,
+    required TResult Function(String error) expenseError,
+    required TResult Function(String comment) expenseAdded,
+    required TResult Function() expenseEditLoading,
+    required TResult Function(ExpenseModel expense) expenseDataForEdit,
+    required TResult Function(String comment) expenseEdited,
+    required TResult Function(String comment) expenseDeleted,
+  }) {
+    return expenseDeleted(comment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? expenseInitial,
+    TResult? Function()? expenseLoading,
+    TResult? Function(List<ExpenseModel> expense)? expenseLoaded,
+    TResult? Function(String error)? expenseError,
+    TResult? Function(String comment)? expenseAdded,
+    TResult? Function()? expenseEditLoading,
+    TResult? Function(ExpenseModel expense)? expenseDataForEdit,
+    TResult? Function(String comment)? expenseEdited,
+    TResult? Function(String comment)? expenseDeleted,
+  }) {
+    return expenseDeleted?.call(comment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? expenseInitial,
+    TResult Function()? expenseLoading,
+    TResult Function(List<ExpenseModel> expense)? expenseLoaded,
+    TResult Function(String error)? expenseError,
+    TResult Function(String comment)? expenseAdded,
+    TResult Function()? expenseEditLoading,
+    TResult Function(ExpenseModel expense)? expenseDataForEdit,
+    TResult Function(String comment)? expenseEdited,
+    TResult Function(String comment)? expenseDeleted,
+    required TResult orElse(),
+  }) {
+    if (expenseDeleted != null) {
+      return expenseDeleted(comment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(expenseInitial value) expenseInitial,
+    required TResult Function(expenseLoading value) expenseLoading,
+    required TResult Function(expenseLoaded value) expenseLoaded,
+    required TResult Function(expenseError value) expenseError,
+    required TResult Function(expenseAdded value) expenseAdded,
+    required TResult Function(expenseEditLoading value) expenseEditLoading,
+    required TResult Function(expenseDataForEdit value) expenseDataForEdit,
+    required TResult Function(expenseEdited value) expenseEdited,
+    required TResult Function(expenseDeleted value) expenseDeleted,
+  }) {
+    return expenseDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(expenseInitial value)? expenseInitial,
+    TResult? Function(expenseLoading value)? expenseLoading,
+    TResult? Function(expenseLoaded value)? expenseLoaded,
+    TResult? Function(expenseError value)? expenseError,
+    TResult? Function(expenseAdded value)? expenseAdded,
+    TResult? Function(expenseEditLoading value)? expenseEditLoading,
+    TResult? Function(expenseDataForEdit value)? expenseDataForEdit,
+    TResult? Function(expenseEdited value)? expenseEdited,
+    TResult? Function(expenseDeleted value)? expenseDeleted,
+  }) {
+    return expenseDeleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(expenseInitial value)? expenseInitial,
+    TResult Function(expenseLoading value)? expenseLoading,
+    TResult Function(expenseLoaded value)? expenseLoaded,
+    TResult Function(expenseError value)? expenseError,
+    TResult Function(expenseAdded value)? expenseAdded,
+    TResult Function(expenseEditLoading value)? expenseEditLoading,
+    TResult Function(expenseDataForEdit value)? expenseDataForEdit,
+    TResult Function(expenseEdited value)? expenseEdited,
+    TResult Function(expenseDeleted value)? expenseDeleted,
+    required TResult orElse(),
+  }) {
+    if (expenseDeleted != null) {
+      return expenseDeleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class expenseDeleted implements ExpenseState {
+  const factory expenseDeleted({required final String comment}) =
+      _$expenseDeletedImpl;
+
+  String get comment;
+
+  /// Create a copy of ExpenseState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$expenseDeletedImplCopyWith<_$expenseDeletedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
